@@ -1,0 +1,9 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "task": "depression",
+  "n": 27123,
+  "accuracy": 0.8740920989566051,
+  "precision": 0.613531799729364,
+  "recall": 0.5329102021626704,
+  "f1": 0.5703862121021512
+}
