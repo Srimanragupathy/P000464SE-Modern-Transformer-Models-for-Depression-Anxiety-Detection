@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import LivePredictionPage from "./pages/LivePredictionPage";
+import DepressionModelsPage from "./pages/DepressionModelsPage";
 import "./App.css";
 
 const navigationItems = [
@@ -137,7 +138,7 @@ function App() {
             <Route
               path="/depression"
               element={
-                <PlaceholderPage title="Depression Models" />
+                <DepressionModelsPage />
               }
             />
 
