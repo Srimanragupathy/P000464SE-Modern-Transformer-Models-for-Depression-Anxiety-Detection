@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import LivePredictionPage from "./pages/LivePredictionPage";
+import DatasetExploration from "./pages/DatasetExploration";
 import "./App.css";
 
 const navigationItems = [
@@ -15,7 +16,7 @@ const navigationItems = [
     label: "Overview",
   },
   {
-    path: "/dataset",
+    path: "/dataset-exploration",
     label: "Dataset Exploration",
   },
   {
@@ -128,9 +129,8 @@ function App() {
             />
 
             <Route
-              path="/dataset"
-              element={
-                <PlaceholderPage title="Dataset Exploration" />
+              path="/dataset-exploration"
+              element={<DatasetExploration />
               }
             />
 
