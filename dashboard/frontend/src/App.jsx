@@ -4,10 +4,12 @@ import {
   NavLink,
   Route,
   Routes,
+  useNavigate,
 } from "react-router-dom";
 
-import LivePredictionPage from "./pages/LivePredictionPage";
 import DatasetExploration from "./pages/DatasetExploration";
+import LivePredictionPage from "./pages/LivePredictionPage";
+import Overview from "./pages/Overview";
 import "./App.css";
 
 const navigationItems = [
@@ -45,6 +47,17 @@ const navigationItems = [
   },
 ];
 
+const overviewRouteMap = {
+  overview: "/overview",
+  "dataset-exploration": "/dataset-exploration",
+  "depression-models": "/depression",
+  "anxiety-models": "/anxiety",
+  "live-prediction": "/prediction",
+  "subgroup-analysis": "/subgroups",
+  interpretability: "/interpretability",
+  methodology: "/methodology",
+};
+
 function PlaceholderPage({ title }) {
   return (
     <main className="page-content">
@@ -60,6 +73,21 @@ function PlaceholderPage({ title }) {
           development stage.
         </p>
       </section>
+    </main>
+  );
+}
+
+function OverviewPage() {
+  const navigate = useNavigate();
+
+  const handleOverviewNavigation = (target) => {
+    const destination = overviewRouteMap[target] || "/overview";
+    navigate(destination);
+  };
+
+  return (
+    <main className="page-content">
+      <Overview onNavigate={handleOverviewNavigation} />
     </main>
   );
 }
@@ -103,89 +131,82 @@ function Sidebar() {
   );
 }
 
+function DashboardRoutes() {
+  return (
+    <div className="dashboard-layout">
+      <Sidebar />
+
+      <section className="dashboard-main">
+        <Routes>
+          <Route
+            path="/"
+            element={<Navigate to="/overview" replace />}
+          />
+
+          <Route
+            path="/overview"
+            element={<OverviewPage />}
+          />
+
+          <Route
+            path="/dataset-exploration"
+            element={<DatasetExploration />}
+          />
+
+          <Route
+            path="/depression"
+            element={
+              <PlaceholderPage title="Depression Models" />
+            }
+          />
+
+          <Route
+            path="/anxiety"
+            element={
+              <PlaceholderPage title="Anxiety Models" />
+            }
+          />
+
+          <Route
+            path="/prediction"
+            element={<LivePredictionPage />}
+          />
+
+          <Route
+            path="/subgroups"
+            element={
+              <PlaceholderPage title="Subgroup Analysis" />
+            }
+          />
+
+          <Route
+            path="/interpretability"
+            element={
+              <PlaceholderPage title="Interpretability Analysis" />
+            }
+          />
+
+          <Route
+            path="/methodology"
+            element={
+              <PlaceholderPage title="Methodology" />
+            }
+          />
+
+          <Route
+            path="*"
+            element={<Navigate to="/overview" replace />}
+          />
+        </Routes>
+      </section>
+    </div>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <div className="dashboard-layout">
-        <Sidebar />
-
-        <section className="dashboard-main">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Navigate
-                  to="/overview"
-                  replace
-                />
-              }
-            />
-
-            <Route
-              path="/overview"
-              element={
-                <PlaceholderPage title="Overview" />
-              }
-            />
-
-            <Route
-              path="/dataset-exploration"
-              element={<DatasetExploration />
-              }
-            />
-
-            <Route
-              path="/depression"
-              element={
-                <PlaceholderPage title="Depression Models" />
-              }
-            />
-
-            <Route
-              path="/anxiety"
-              element={
-                <PlaceholderPage title="Anxiety Models" />
-              }
-            />
-
-            <Route
-              path="/prediction"
-              element={<LivePredictionPage />}
-            />
-
-            <Route
-              path="/subgroups"
-              element={
-                <PlaceholderPage title="Subgroup Analysis" />
-              }
-            />
-
-            <Route
-              path="/interpretability"
-              element={
-                <PlaceholderPage title="Interpretability Analysis" />
-              }
-            />
-
-            <Route
-              path="/methodology"
-              element={
-                <PlaceholderPage title="Methodology" />
-              }
-            />
-
-            <Route
-              path="*"
-              element={
-                <Navigate
-                  to="/overview"
-                  replace
-                />
-              }
-            />
-          </Routes>
-        </section>
-      </div>
+      <DashboardRoutes />
     </BrowserRouter>
   );
 }
