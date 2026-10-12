@@ -9,6 +9,7 @@ import {
 
 import DatasetExploration from "./pages/DatasetExploration";
 import LivePredictionPage from "./pages/LivePredictionPage";
+import DepressionModels from "./pages/DepressionModels";
 import Overview from "./pages/Overview";
 import "./App.css";
 
@@ -155,9 +156,7 @@ function DashboardRoutes() {
 
           <Route
             path="/depression"
-            element={
-              <PlaceholderPage title="Depression Models" />
-            }
+            element={<DepressionModels />}
           />
 
           <Route

@@ -1,0 +1,591 @@
+{
+  "task": "depression",
+  "generated_at": "2026-10-12T01:12:04.507242+00:00",
+  "primary_metric": "PR-AUC",
+  "runs": [
+    {
+      "model_key": "clinicalbert",
+      "model": "ClinicalBERT",
+      "stage": "baseline",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/clinicalbert_baseline/depression",
+      "metrics": {
+        "accuracy": 0.6506608916436413,
+        "balanced_accuracy": 0.6242023206592449,
+        "precision": 0.2656728206140784,
+        "recall": 0.5838576697765242,
+        "specificity": 0.6645469715419654,
+        "f1": 0.3651784502646221,
+        "pr_auc": 0.30525526827281935,
+        "roc_auc": 0.6715364084495541,
+        "threshold": 0.4577498733997345,
+        "loss": 0.652112299363425
+      },
+      "training": {
+        "best_epoch": 20,
+        "completed_epochs": 20,
+        "best_validation_pr_auc": 0.31366824234312857,
+        "training_time_seconds": 17948.367464780807
+      },
+      "token_information": {
+        "maximum_tokens": 6626.0,
+        "truncation_percentage": 89.18
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-baseline-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-baseline-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-baseline-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-baseline-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-baseline-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-baseline-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-baseline-validation_threshold_selection.png"
+        }
+      ]
+    },
+    {
+      "model_key": "clinicalbert",
+      "model": "ClinicalBERT",
+      "stage": "fine-tuned",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/clinicalbert_finetuned/depression",
+      "metrics": {
+        "accuracy": 0.8886565603763722,
+        "balanced_accuracy": 0.8204410304080644,
+        "precision": 0.663451878641752,
+        "recall": 0.7164243870687784,
+        "specificity": 0.9244576737473503,
+        "f1": 0.6889213436261215,
+        "pr_auc": 0.6959836566278795,
+        "roc_auc": 0.8934698080266014,
+        "threshold": 0.6041570901870728,
+        "loss": 0.4225787806338855
+      },
+      "training": {
+        "best_epoch": 2,
+        "completed_epochs": 8,
+        "best_validation_pr_auc": 0.7114363805985061,
+        "training_time_seconds": 24757.398635864258
+      },
+      "token_information": {
+        "maximum_tokens": 6626.0,
+        "truncation_percentage": 89.18
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-fine-tuned-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-fine-tuned-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-fine-tuned-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-fine-tuned-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-fine-tuned-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-fine-tuned-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/clinicalbert-fine-tuned-validation_threshold_selection.png"
+        }
+      ]
+    },
+    {
+      "model_key": "roberta",
+      "model": "RoBERTa",
+      "stage": "baseline",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/roberta_baseline/depression",
+      "metrics": {
+        "accuracy": 0.7267567769397356,
+        "balanced_accuracy": 0.6521990230926049,
+        "precision": 0.3234719145054086,
+        "recall": 0.5385116077240182,
+        "specificity": 0.7658864384611915,
+        "f1": 0.40416870216577105,
+        "pr_auc": 0.36319136402739405,
+        "roc_auc": 0.7189158554434132,
+        "threshold": 0.4761529862880707,
+        "loss": 0.6276511480014042
+      },
+      "training": {
+        "best_epoch": 20,
+        "completed_epochs": 20,
+        "best_validation_pr_auc": 0.3773685233459579,
+        "training_time_seconds": 19275.310882806778
+      },
+      "token_information": {
+        "maximum_tokens": 6977.0,
+        "truncation_percentage": 91.48
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/roberta-baseline-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/roberta-baseline-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/roberta-baseline-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/roberta-baseline-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/roberta-baseline-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/roberta-baseline-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/roberta-baseline-validation_threshold_selection.png"
+        }
+      ]
+    },
+    {
+      "model_key": "roberta",
+      "model": "RoBERTa",
+      "stage": "fine-tuned",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/roberta_finetuned/depression",
+      "metrics": {
+        "accuracy": 0.8888432529310731,
+        "balanced_accuracy": 0.8088668304177459,
+        "precision": 0.6736170212765957,
+        "recall": 0.6869169017140377,
+        "specificity": 0.930816759121454,
+        "f1": 0.6802019550972177,
+        "pr_auc": 0.6904116437635672,
+        "roc_auc": 0.886908898415023,
+        "threshold": 0.6614400744438171,
+        "loss": 0.4931156915773137
+      },
+      "training": {
+        "best_epoch": 5,
+        "completed_epochs": 8,
+        "best_validation_pr_auc": 0.7007258708912542,
+        "training_time_seconds": 25661.747881650925
+      },
+      "token_information": {
+        "maximum_tokens": 6977.0,
+        "truncation_percentage": 91.48
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/roberta-fine-tuned-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/roberta-fine-tuned-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/roberta-fine-tuned-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/roberta-fine-tuned-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/roberta-fine-tuned-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/roberta-fine-tuned-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/roberta-fine-tuned-validation_threshold_selection.png"
+        }
+      ]
+    },
+    {
+      "model_key": "deberta",
+      "model": "DeBERTa",
+      "stage": "baseline",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/deberta_baseline/depression",
+      "metrics": {
+        "accuracy": 0.6548428048689419,
+        "balanced_accuracy": 0.6289621846518918,
+        "precision": 0.26983811699275,
+        "recall": 0.5894988066825776,
+        "specificity": 0.668425562621206,
+        "f1": 0.3702139256029432,
+        "pr_auc": 0.30940204151113854,
+        "roc_auc": 0.6784964898160686,
+        "threshold": 0.47178465127944946,
+        "loss": 0.6453930877138133
+      },
+      "training": {
+        "best_epoch": 20,
+        "completed_epochs": 20,
+        "best_validation_pr_auc": 0.3236446045655851,
+        "training_time_seconds": 55261.939680337906
+      },
+      "token_information": {
+        "maximum_tokens": 5623.0,
+        "truncation_percentage": 82.8
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/deberta-baseline-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/deberta-baseline-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/deberta-baseline-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/deberta-baseline-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/deberta-baseline-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/deberta-baseline-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/deberta-baseline-validation_threshold_selection.png"
+        }
+      ]
+    },
+    {
+      "model_key": "deberta",
+      "model": "DeBERTa",
+      "stage": "fine-tuned",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/deberta_finetuned/depression",
+      "metrics": {
+        "accuracy": 0.8852960943917556,
+        "balanced_accuracy": 0.8372309614809604,
+        "precision": 0.6396003633060854,
+        "recall": 0.7639401171620742,
+        "specificity": 0.9105218057998467,
+        "f1": 0.6962626062883133,
+        "pr_auc": 0.7314886198295987,
+        "roc_auc": 0.9133949989528389,
+        "threshold": 0.6366170048713684,
+        "loss": 0.45408343621371017
+      },
+      "training": {
+        "best_epoch": 4,
+        "completed_epochs": 8,
+        "best_validation_pr_auc": 0.7344936885425745,
+        "training_time_seconds": 57535.2889547348
+      },
+      "token_information": {
+        "maximum_tokens": 5623.0,
+        "truncation_percentage": 82.8
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/deberta-fine-tuned-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/deberta-fine-tuned-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/deberta-fine-tuned-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/deberta-fine-tuned-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/deberta-fine-tuned-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/deberta-fine-tuned-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/deberta-fine-tuned-validation_threshold_selection.png"
+        }
+      ]
+    },
+    {
+      "model_key": "clinical-longformer",
+      "model": "Clinical Longformer",
+      "stage": "baseline",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/clinical_longformer_baseline/depression",
+      "metrics": {
+        "accuracy": 0.677021880367411,
+        "balanced_accuracy": 0.6144284813252328,
+        "precision": 0.27104815864022663,
+        "recall": 0.5189845953569104,
+        "specificity": 0.7098723672935552,
+        "f1": 0.35611135923775494,
+        "pr_auc": 0.2903834516116329,
+        "roc_auc": 0.6653099024841216,
+        "threshold": 0.1721144169569015,
+        "loss": null
+      },
+      "training": {
+        "best_epoch": 15,
+        "completed_epochs": 15,
+        "best_validation_pr_auc": 0.294786880357776,
+        "training_time_seconds": 186755.96286654472
+      },
+      "token_information": {
+        "maximum_tokens": 2048.0,
+        "truncation_percentage": 9.427974012396385
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-baseline-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-baseline-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-baseline-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-baseline-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-baseline-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-baseline-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-baseline-validation_threshold_selection.png"
+        }
+      ]
+    },
+    {
+      "model_key": "clinical-longformer",
+      "model": "Clinical Longformer",
+      "stage": "fine-tuned",
+      "status": "completed",
+      "source_directory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs/clinical_longformer_finetuned/depression",
+      "metrics": {
+        "accuracy": 0.8958255544768875,
+        "balanced_accuracy": 0.8648156099694431,
+        "precision": 0.6590869337064894,
+        "recall": 0.8175309177695812,
+        "specificity": 0.912100302169305,
+        "f1": 0.7298082510168507,
+        "pr_auc": 0.7852497402503443,
+        "roc_auc": 0.9362377343620414,
+        "threshold": 0.22004921734333038,
+        "loss": 0.4799039651477827
+      },
+      "training": {
+        "best_epoch": 4,
+        "completed_epochs": 8,
+        "best_validation_pr_auc": 0.7863335925467425,
+        "training_time_seconds": 490484.17170619965
+      },
+      "token_information": {
+        "maximum_tokens": 2048.0,
+        "truncation_percentage": 9.43
+      },
+      "figures": [
+        {
+          "key": "class_distribution",
+          "title": "Dataset Class Distribution",
+          "caption": "Distribution of depression-positive and control admissions used for this model experiment.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-fine-tuned-class_distribution.png"
+        },
+        {
+          "key": "test_confusion_matrix",
+          "title": "Test Confusion Matrix",
+          "caption": "Shows correct and incorrect predictions across depression-positive and control admissions.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-fine-tuned-test_confusion_matrix.png"
+        },
+        {
+          "key": "test_roc_pr_curves",
+          "title": "ROC and Precision\u2013Recall Curves",
+          "caption": "Displays discrimination performance across classification thresholds. PR-AUC is the primary metric for this study.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-fine-tuned-test_roc_pr_curves.png"
+        },
+        {
+          "key": "token_length_distribution",
+          "title": "Token-Length Distribution",
+          "caption": "Shows the distribution of tokenised discharge-note lengths and the effect of the selected context window.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-fine-tuned-token_length_distribution.png"
+        },
+        {
+          "key": "training_validation_accuracy_loss",
+          "title": "Training and Validation History",
+          "caption": "Compares training and validation accuracy and loss across epochs to help assess convergence and overfitting.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-fine-tuned-training_validation_accuracy_loss.png"
+        },
+        {
+          "key": "validation_metrics_by_epoch",
+          "title": "Validation Metrics by Epoch",
+          "caption": "Shows how the principal validation metrics changed during model training and identifies the strongest validation epoch.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-fine-tuned-validation_metrics_by_epoch.png"
+        },
+        {
+          "key": "validation_threshold_selection",
+          "title": "Validation Threshold Selection",
+          "caption": "Shows the validation-based decision-threshold analysis used before the final test evaluation.",
+          "url": "/dashboard_data/depression/figures/clinical-longformer-fine-tuned-validation_threshold_selection.png"
+        }
+      ]
+    }
+  ]
+}
