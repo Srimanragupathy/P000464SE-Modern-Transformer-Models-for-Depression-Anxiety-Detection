@@ -12,6 +12,9 @@ import LivePredictionPage from "./pages/LivePredictionPage";
 import DepressionModels from "./pages/DepressionModels";
 import AnxietyModels from "./pages/AnxietyModels";
 import Overview from "./pages/Overview";
+import SubgroupAnalysis from "./pages/SubgroupAnalysis";
+import InterpretabilityAnalysis from "./pages/InterpretabilityAnalysis";
+import Methodology from "./pages/Methodology";
 import "./App.css";
 
 const navigationItems = [
@@ -37,7 +40,7 @@ const navigationItems = [
   },
   {
     path: "/subgroups",
-    label: "Subgroup Analysis",
+    label: "Comparative & Subgroups",
   },
   {
     path: "/interpretability",
@@ -172,23 +175,17 @@ function DashboardRoutes() {
 
           <Route
             path="/subgroups"
-            element={
-              <PlaceholderPage title="Subgroup Analysis" />
-            }
+            element={<SubgroupAnalysis />}
           />
 
           <Route
             path="/interpretability"
-            element={
-              <PlaceholderPage title="Interpretability Analysis" />
-            }
+            element={<InterpretabilityAnalysis />}
           />
 
           <Route
             path="/methodology"
-            element={
-              <PlaceholderPage title="Methodology" />
-            }
+            element={<Methodology />}
           />
 
           <Route
