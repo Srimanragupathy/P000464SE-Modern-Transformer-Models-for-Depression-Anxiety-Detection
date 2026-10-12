@@ -1,6 +1,6 @@
 {
   "task": "anxiety",
-  "generatedAt": "2026-10-12T02:32:55.414363+00:00",
+  "generatedAt": "2026-10-12T03:06:17.580900+00:00",
   "modelOutputsDirectory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs",
   "runs": [
     {
@@ -38,7 +38,7 @@
       "figures": [
         {
           "name": "class_distribution.png",
-          "label": "Class distribution",
+          "label": "Dataset class distribution",
           "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/class_distribution.png"
         },
         {
@@ -98,7 +98,7 @@
         "bestValidationPrAuc": 0.6195221944114091,
         "bestValidationAccuracy": 0.8910286519492719,
         "finalEpoch": 8,
-        "finalValidationAccuracy": 0.9046892124628151,
+        "finalValidationAccuracy": 0.9046892124628152,
         "trainingSeconds": 23009.641669273376
       },
       "truncation": {
@@ -108,7 +108,7 @@
       "figures": [
         {
           "name": "class_distribution.png",
-          "label": "Class distribution",
+          "label": "Dataset class distribution",
           "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/class_distribution.png"
         },
         {
@@ -178,7 +178,7 @@
       "figures": [
         {
           "name": "class_distribution.png",
-          "label": "Class distribution",
+          "label": "Dataset class distribution",
           "url": "/dashboard_data/anxiety/figures/roberta-baseline/class_distribution.png"
         },
         {
@@ -238,7 +238,7 @@
         "bestValidationPrAuc": 0.6081644150751558,
         "bestValidationAccuracy": 0.9029669641459214,
         "finalEpoch": 8,
-        "finalValidationAccuracy": 0.9055894786284641,
+        "finalValidationAccuracy": 0.905589478628464,
         "trainingSeconds": 23797.59099173546
       },
       "truncation": {
@@ -248,7 +248,7 @@
       "figures": [
         {
           "name": "class_distribution.png",
-          "label": "Class distribution",
+          "label": "Dataset class distribution",
           "url": "/dashboard_data/anxiety/figures/roberta-finetuned/class_distribution.png"
         },
         {
@@ -318,7 +318,7 @@
       "figures": [
         {
           "name": "class_distribution.png",
-          "label": "Class distribution",
+          "label": "Dataset class distribution",
           "url": "/dashboard_data/anxiety/figures/deberta-baseline/class_distribution.png"
         },
         {
@@ -388,7 +388,7 @@
       "figures": [
         {
           "name": "class_distribution.png",
-          "label": "Class distribution",
+          "label": "Dataset class distribution",
           "url": "/dashboard_data/anxiety/figures/deberta-finetuned/class_distribution.png"
         },
         {
@@ -430,7 +430,7 @@
       "stage": "Baseline",
       "relativeDirectory": "clinical_longformer_baseline/anxiety",
       "status": "missing",
-      "message": "Clinical Longformer baseline was not available for this experiment.",
+      "message": "Run directory not found.",
       "metrics": null,
       "training": null,
       "truncation": null,
@@ -470,7 +470,7 @@
       "figures": [
         {
           "name": "class_distribution.png",
-          "label": "Class distribution",
+          "label": "Dataset class distribution",
           "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/class_distribution.png"
         },
         {

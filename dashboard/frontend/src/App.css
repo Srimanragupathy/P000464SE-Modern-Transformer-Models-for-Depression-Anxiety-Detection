@@ -1,83 +1,142 @@
-.dashboard-layout {
-  display: grid;
-  grid-template-columns: 270px minmax(0, 1fr);
-  width: 100%;
-  min-height: 100vh;
-  background: #f3f6fa;
+:root {
+  --sidebar-width: 240px;
+  --sidebar-background: #103d57;
+  --sidebar-background-dark: #0b3047;
+  --sidebar-text: #d7e7ef;
+  --sidebar-muted: #9db8c7;
+  --sidebar-active-text: #123b55;
+  --page-background: #f3f6fa;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--page-background);
+  color: #14263a;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   DASHBOARD LAYOUT
+   ========================================================= */
+
+.dashboard-layout {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--page-background);
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
 .sidebar {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  z-index: 100;
+  inset: 0 auto 0 0;
   display: flex;
-  width: 270px;
-  height: 100vh;
   flex-direction: column;
-  padding: 1.5rem 1rem;
+  width: var(--sidebar-width);
+  min-height: 100vh;
   overflow-y: auto;
-  color: #ffffff;
+  padding: 28px 14px 20px;
+  color: var(--sidebar-text);
   background:
     linear-gradient(
       180deg,
-      #143f58 0%,
-      #102f46 100%
+      var(--sidebar-background) 0%,
+      var(--sidebar-background-dark) 100%
     );
-  box-shadow: 4px 0 18px rgba(15, 40, 58, 0.12);
+  box-shadow: 8px 0 26px rgba(12, 47, 70, 0.08);
 }
 
 .sidebar-header {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.5rem 0.5rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  gap: 12px;
+  padding: 0 6px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .sidebar-logo {
   display: grid;
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
-  border-radius: 12px;
-  color: #143f58;
-  background: #ffffff;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
   place-items: center;
-  font-size: 1rem;
-  font-weight: 800;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #123d57;
+  font-size: 0.9rem;
+  font-weight: 900;
   letter-spacing: 0.04em;
 }
 
 .sidebar-header h2 {
   margin: 0;
   color: #ffffff;
-  font-size: 1.05rem;
-  font-weight: 750;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.25;
 }
 
 .sidebar-header p {
-  margin: 0.25rem 0 0;
-  color: #bdd0dd;
-  font-size: 0.76rem;
+  margin: 3px 0 0;
+  color: var(--sidebar-muted);
+  font-size: 0.7rem;
+  line-height: 1.3;
 }
 
 .sidebar-navigation {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  gap: 0.35rem;
-  padding: 1.5rem 0;
+  gap: 6px;
+  margin-top: 22px;
 }
 
 .navigation-link {
   display: flex;
   align-items: center;
-  min-height: 44px;
-  padding: 0.75rem 0.9rem;
+  min-height: 40px;
+  padding: 10px 13px;
+  border: 1px solid transparent;
   border-radius: 9px;
-  color: #d4e1e9;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 550;
+  color: var(--sidebar-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.3;
   transition:
     color 150ms ease,
     background-color 150ms ease,
@@ -86,106 +145,147 @@
 
 .navigation-link:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateX(2px);
 }
 
 .navigation-link--active {
-  color: #143f58;
+  border-color: rgba(255, 255, 255, 0.55);
   background: #ffffff;
-  box-shadow: 0 5px 16px rgba(5, 22, 33, 0.18);
-  font-weight: 750;
+  color: var(--sidebar-active-text);
+  box-shadow: 0 8px 18px rgba(4, 29, 45, 0.12);
 }
 
 .navigation-link--active:hover {
-  color: #143f58;
   background: #ffffff;
+  color: var(--sidebar-active-text);
+  transform: none;
 }
 
 .sidebar-footer {
-  padding: 1rem 0.65rem 0.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin-top: auto;
+  padding: 22px 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .sidebar-footer p {
   margin: 0;
   color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
 }
 
 .sidebar-footer span {
   display: block;
-  margin-top: 0.25rem;
-  color: #a9c0cf;
-  font-size: 0.72rem;
+  margin-top: 4px;
+  color: var(--sidebar-muted);
+  font-size: 0.67rem;
 }
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
 
 .dashboard-main {
-  width: 100%;
+  width: calc(100% - var(--sidebar-width));
   min-width: 0;
   min-height: 100vh;
+  margin-left: var(--sidebar-width);
   overflow-x: hidden;
-  background: #f3f6fa;
+  background: var(--page-background);
 }
 
-.page-content {
+/*
+  Allow every route component to occupy the complete available
+  width beside the sidebar.
+*/
+
+.dashboard-main > * {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2.25rem;
+  min-width: 0;
+}
+
+/*
+  Some page-specific CSS files use max-width with auto margins.
+  These overrides ensure that all main dashboard pages use the
+  same full-width layout as Dataset Exploration.
+*/
+
+.dashboard-main .overview-page,
+.dashboard-main .dataset-exploration-page,
+.dashboard-main .model-results-page,
+.dashboard-main .lp-page,
+.dashboard-main .live-prediction-page,
+.dashboard-main .subgroup-page,
+.dashboard-main .subgroups-page,
+.dashboard-main .interpretability-page,
+.dashboard-main .methodology-page,
+.dashboard-main .page-content {
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/*
+  Additional fallback for route components whose root class name
+  ends with "-page".
+*/
+
+.dashboard-main > [class$="-page"] {
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* =========================================================
+   PLACEHOLDER PAGES
+   ========================================================= */
+
+.page-content {
+  min-height: 100vh;
+  padding: 28px;
 }
 
 .placeholder-card {
-  min-height: 250px;
-  padding: 2rem;
-  border: 1px solid #dce4ec;
-  border-radius: 16px;
+  width: 100%;
+  padding: 40px;
+  border: 1px solid #dce5ee;
+  border-radius: 20px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(22, 50, 74, 0.07);
-}
-
-.page-eyebrow {
-  margin: 0 0 0.55rem;
-  color: #3973b9;
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  box-shadow: 0 12px 32px rgba(18, 47, 76, 0.06);
 }
 
 .placeholder-card h1 {
-  margin: 0;
-  color: #17324d;
-  font-size: 2rem;
+  margin: 8px 0 12px;
+  color: #132a42;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.04em;
 }
 
 .placeholder-card > p:last-child {
-  margin-top: 0.75rem;
-  color: #66778a;
+  max-width: 760px;
+  margin: 0;
+  color: #65758a;
+  font-size: 1rem;
+  line-height: 1.7;
 }
+
+.page-eyebrow {
+  margin: 0;
+  color: #267cb4;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUT
+   ========================================================= */
 
 @media (max-width: 900px) {
-  .dashboard-layout {
-    grid-template-columns: 220px minmax(0, 1fr);
-  }
-
-  .sidebar {
-    width: 220px;
-  }
-
-  .sidebar-header {
-    align-items: flex-start;
-  }
-
-  .sidebar-logo {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
-  }
-}
-
-@media (max-width: 700px) {
   .dashboard-layout {
     display: block;
   }
@@ -193,20 +293,41 @@
   .sidebar {
     position: relative;
     width: 100%;
-    height: auto;
     min-height: auto;
+    padding: 18px;
+  }
+
+  .sidebar-header {
+    padding-bottom: 16px;
   }
 
   .sidebar-navigation {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 16px;
   }
 
   .sidebar-footer {
     display: none;
   }
 
+  .dashboard-main {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar-navigation {
+    grid-template-columns: 1fr;
+  }
+
   .page-content {
-    padding: 1rem;
+    padding: 18px;
+  }
+
+  .placeholder-card {
+    padding: 26px 22px;
+    border-radius: 16px;
   }
 }
