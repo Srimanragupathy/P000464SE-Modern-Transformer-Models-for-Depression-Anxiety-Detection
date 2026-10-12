@@ -1,0 +1,573 @@
+{
+  "task": "anxiety",
+  "generatedAt": "2026-10-12T02:32:55.414363+00:00",
+  "modelOutputsDirectory": "/Users/purnaperamune/Documents/GitHub/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs",
+  "runs": [
+    {
+      "id": "clinicalbert-baseline",
+      "model": "ClinicalBERT",
+      "stage": "Baseline",
+      "relativeDirectory": "clinicalbert_baseline/anxiety",
+      "status": "complete",
+      "message": "Metrics loaded successfully.",
+      "metrics": {
+        "accuracy": 0.7843223560481773,
+        "balancedAccuracy": 0.6393197412040559,
+        "precision": 0.248828125,
+        "recall": 0.45209368346344925,
+        "specificity": 0.8265457989446624,
+        "f1": 0.32098765432098764,
+        "rocAuc": 0.7078700151211086,
+        "prAuc": 0.2639280639840632,
+        "threshold": 0.5,
+        "weightedLoss": null,
+        "testSamples": 24991
+      },
+      "training": {
+        "bestEpoch": 20,
+        "bestValidationPrAuc": 0.2668559947368364,
+        "bestValidationAccuracy": 0.8236261155472052,
+        "finalEpoch": 20,
+        "finalValidationAccuracy": 0.8236261155472052,
+        "trainingSeconds": 16714.681019306183
+      },
+      "truncation": {
+        "testPercentage": null,
+        "selectedMaxLength": null
+      },
+      "figures": [
+        {
+          "name": "class_distribution.png",
+          "label": "Class distribution",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/class_distribution.png"
+        },
+        {
+          "name": "test_confusion_matrix.png",
+          "label": "Test confusion matrix",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/test_confusion_matrix.png"
+        },
+        {
+          "name": "test_roc_pr_curves.png",
+          "label": "Test ROC and precision-recall curves",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/test_roc_pr_curves.png"
+        },
+        {
+          "name": "token_length_distribution.png",
+          "label": "Token-length distribution",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/token_length_distribution.png"
+        },
+        {
+          "name": "training_validation_accuracy_loss.png",
+          "label": "Training and validation accuracy/loss",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/training_validation_accuracy_loss.png"
+        },
+        {
+          "name": "validation_metrics_by_epoch.png",
+          "label": "Validation metrics by epoch",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/validation_metrics_by_epoch.png"
+        },
+        {
+          "name": "validation_threshold_selection.png",
+          "label": "Validation threshold selection",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-baseline/validation_threshold_selection.png"
+        }
+      ],
+      "metricsSource": "predictions/test_predictions.csv"
+    },
+    {
+      "id": "clinicalbert-finetuned",
+      "model": "ClinicalBERT",
+      "stage": "Fine-tuned",
+      "relativeDirectory": "clinicalbert_finetuned/anxiety",
+      "status": "complete",
+      "message": "Metrics loaded successfully.",
+      "metrics": {
+        "accuracy": 0.9057260613820975,
+        "balancedAccuracy": 0.7724764807561879,
+        "precision": 0.5790554414784395,
+        "recall": 0.6004258339247693,
+        "specificity": 0.9445271275876066,
+        "f1": 0.5895470383275261,
+        "rocAuc": 0.881284997831588,
+        "prAuc": 0.6105616125353002,
+        "threshold": 0.8297480940818787,
+        "weightedLoss": 0.671178754081267
+      },
+      "training": {
+        "bestEpoch": 3,
+        "bestValidationPrAuc": 0.6195221944114091,
+        "bestValidationAccuracy": 0.8910286519492719,
+        "finalEpoch": 8,
+        "finalValidationAccuracy": 0.9046892124628151,
+        "trainingSeconds": 23009.641669273376
+      },
+      "truncation": {
+        "testPercentage": 88.75,
+        "selectedMaxLength": null
+      },
+      "figures": [
+        {
+          "name": "class_distribution.png",
+          "label": "Class distribution",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/class_distribution.png"
+        },
+        {
+          "name": "test_confusion_matrix.png",
+          "label": "Test confusion matrix",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/test_confusion_matrix.png"
+        },
+        {
+          "name": "test_roc_pr_curves.png",
+          "label": "Test ROC and precision-recall curves",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/test_roc_pr_curves.png"
+        },
+        {
+          "name": "token_length_distribution.png",
+          "label": "Token-length distribution",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/token_length_distribution.png"
+        },
+        {
+          "name": "training_validation_accuracy_loss.png",
+          "label": "Training and validation accuracy/loss",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/training_validation_accuracy_loss.png"
+        },
+        {
+          "name": "validation_metrics_by_epoch.png",
+          "label": "Validation metrics by epoch",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/validation_metrics_by_epoch.png"
+        },
+        {
+          "name": "validation_threshold_selection.png",
+          "label": "Validation threshold selection",
+          "url": "/dashboard_data/anxiety/figures/clinicalbert-finetuned/validation_threshold_selection.png"
+        }
+      ],
+      "metricsSource": "metrics.json"
+    },
+    {
+      "id": "roberta-baseline",
+      "model": "RoBERTa",
+      "stage": "Baseline",
+      "relativeDirectory": "roberta_baseline/anxiety",
+      "status": "complete",
+      "message": "Metrics loaded successfully.",
+      "metrics": {
+        "accuracy": 0.8048097315033412,
+        "balancedAccuracy": 0.6654241149113349,
+        "precision": 0.28523769808173477,
+        "recall": 0.4854506742370476,
+        "specificity": 0.8453975555856221,
+        "f1": 0.35933806146572106,
+        "rocAuc": 0.7449457067987565,
+        "prAuc": 0.30837405080137703,
+        "threshold": 0.4835466146469116,
+        "weightedLoss": 0.6258800672520117
+      },
+      "training": {
+        "bestEpoch": 20,
+        "bestValidationPrAuc": 0.3208856416732668,
+        "bestValidationAccuracy": 0.8144277438547048,
+        "finalEpoch": 20,
+        "finalValidationAccuracy": 0.8144277438547048,
+        "trainingSeconds": 17957.70640540123
+      },
+      "truncation": {
+        "testPercentage": 91.15,
+        "selectedMaxLength": null
+      },
+      "figures": [
+        {
+          "name": "class_distribution.png",
+          "label": "Class distribution",
+          "url": "/dashboard_data/anxiety/figures/roberta-baseline/class_distribution.png"
+        },
+        {
+          "name": "test_confusion_matrix.png",
+          "label": "Test confusion matrix",
+          "url": "/dashboard_data/anxiety/figures/roberta-baseline/test_confusion_matrix.png"
+        },
+        {
+          "name": "test_roc_pr_curves.png",
+          "label": "Test ROC and precision-recall curves",
+          "url": "/dashboard_data/anxiety/figures/roberta-baseline/test_roc_pr_curves.png"
+        },
+        {
+          "name": "token_length_distribution.png",
+          "label": "Token-length distribution",
+          "url": "/dashboard_data/anxiety/figures/roberta-baseline/token_length_distribution.png"
+        },
+        {
+          "name": "training_validation_accuracy_loss.png",
+          "label": "Training and validation accuracy/loss",
+          "url": "/dashboard_data/anxiety/figures/roberta-baseline/training_validation_accuracy_loss.png"
+        },
+        {
+          "name": "validation_metrics_by_epoch.png",
+          "label": "Validation metrics by epoch",
+          "url": "/dashboard_data/anxiety/figures/roberta-baseline/validation_metrics_by_epoch.png"
+        },
+        {
+          "name": "validation_threshold_selection.png",
+          "label": "Validation threshold selection",
+          "url": "/dashboard_data/anxiety/figures/roberta-baseline/validation_threshold_selection.png"
+        }
+      ],
+      "metricsSource": "metrics.json"
+    },
+    {
+      "id": "roberta-finetuned",
+      "model": "RoBERTa",
+      "stage": "Fine-tuned",
+      "relativeDirectory": "roberta_finetuned/anxiety",
+      "status": "complete",
+      "message": "Metrics loaded successfully.",
+      "metrics": {
+        "accuracy": 0.9023648513464847,
+        "balancedAccuracy": 0.7694981191358732,
+        "precision": 0.5631684491978609,
+        "recall": 0.5979418026969482,
+        "specificity": 0.9410544355747982,
+        "f1": 0.5800344234079173,
+        "rocAuc": 0.8614432760615864,
+        "prAuc": 0.5900088004095845,
+        "threshold": 0.4321577847003937,
+        "weightedLoss": 0.5931517676016604
+      },
+      "training": {
+        "bestEpoch": 5,
+        "bestValidationPrAuc": 0.6081644150751558,
+        "bestValidationAccuracy": 0.9029669641459214,
+        "finalEpoch": 8,
+        "finalValidationAccuracy": 0.9055894786284641,
+        "trainingSeconds": 23797.59099173546
+      },
+      "truncation": {
+        "testPercentage": 91.15,
+        "selectedMaxLength": null
+      },
+      "figures": [
+        {
+          "name": "class_distribution.png",
+          "label": "Class distribution",
+          "url": "/dashboard_data/anxiety/figures/roberta-finetuned/class_distribution.png"
+        },
+        {
+          "name": "test_confusion_matrix.png",
+          "label": "Test confusion matrix",
+          "url": "/dashboard_data/anxiety/figures/roberta-finetuned/test_confusion_matrix.png"
+        },
+        {
+          "name": "test_roc_pr_curves.png",
+          "label": "Test ROC and precision-recall curves",
+          "url": "/dashboard_data/anxiety/figures/roberta-finetuned/test_roc_pr_curves.png"
+        },
+        {
+          "name": "token_length_distribution.png",
+          "label": "Token-length distribution",
+          "url": "/dashboard_data/anxiety/figures/roberta-finetuned/token_length_distribution.png"
+        },
+        {
+          "name": "training_validation_accuracy_loss.png",
+          "label": "Training and validation accuracy/loss",
+          "url": "/dashboard_data/anxiety/figures/roberta-finetuned/training_validation_accuracy_loss.png"
+        },
+        {
+          "name": "validation_metrics_by_epoch.png",
+          "label": "Validation metrics by epoch",
+          "url": "/dashboard_data/anxiety/figures/roberta-finetuned/validation_metrics_by_epoch.png"
+        },
+        {
+          "name": "validation_threshold_selection.png",
+          "label": "Validation threshold selection",
+          "url": "/dashboard_data/anxiety/figures/roberta-finetuned/validation_threshold_selection.png"
+        }
+      ],
+      "metricsSource": "metrics.json"
+    },
+    {
+      "id": "deberta-baseline",
+      "model": "DeBERTa",
+      "stage": "Baseline",
+      "relativeDirectory": "deberta_baseline/anxiety",
+      "status": "complete",
+      "message": "Metrics loaded successfully.",
+      "metrics": {
+        "accuracy": 0.7518306590372534,
+        "balancedAccuracy": 0.6224031110030079,
+        "precision": 0.21563025210084033,
+        "recall": 0.4552874378992193,
+        "specificity": 0.7895187841067965,
+        "f1": 0.2926551094890511,
+        "rocAuc": 0.6838175186497994,
+        "prAuc": 0.22907721700923822,
+        "threshold": 0.4159142076969147,
+        "weightedLoss": 0.6816050194289321
+      },
+      "training": {
+        "bestEpoch": 19,
+        "bestValidationPrAuc": 0.2474369370322122,
+        "bestValidationAccuracy": 0.8287928604978864,
+        "finalEpoch": 20,
+        "finalValidationAccuracy": 0.8163457022076092,
+        "trainingSeconds": 51394.53300690651
+      },
+      "truncation": {
+        "testPercentage": 82.25,
+        "selectedMaxLength": null
+      },
+      "figures": [
+        {
+          "name": "class_distribution.png",
+          "label": "Class distribution",
+          "url": "/dashboard_data/anxiety/figures/deberta-baseline/class_distribution.png"
+        },
+        {
+          "name": "test_confusion_matrix.png",
+          "label": "Test confusion matrix",
+          "url": "/dashboard_data/anxiety/figures/deberta-baseline/test_confusion_matrix.png"
+        },
+        {
+          "name": "test_roc_pr_curves.png",
+          "label": "Test ROC and precision-recall curves",
+          "url": "/dashboard_data/anxiety/figures/deberta-baseline/test_roc_pr_curves.png"
+        },
+        {
+          "name": "token_length_distribution.png",
+          "label": "Token-length distribution",
+          "url": "/dashboard_data/anxiety/figures/deberta-baseline/token_length_distribution.png"
+        },
+        {
+          "name": "training_validation_accuracy_loss.png",
+          "label": "Training and validation accuracy/loss",
+          "url": "/dashboard_data/anxiety/figures/deberta-baseline/training_validation_accuracy_loss.png"
+        },
+        {
+          "name": "validation_metrics_by_epoch.png",
+          "label": "Validation metrics by epoch",
+          "url": "/dashboard_data/anxiety/figures/deberta-baseline/validation_metrics_by_epoch.png"
+        },
+        {
+          "name": "validation_threshold_selection.png",
+          "label": "Validation threshold selection",
+          "url": "/dashboard_data/anxiety/figures/deberta-baseline/validation_threshold_selection.png"
+        }
+      ],
+      "metricsSource": "metrics.json"
+    },
+    {
+      "id": "deberta-finetuned",
+      "model": "DeBERTa",
+      "stage": "Fine-tuned",
+      "relativeDirectory": "deberta_finetuned/anxiety",
+      "status": "complete",
+      "message": "Metrics loaded successfully.",
+      "metrics": {
+        "accuracy": 0.9072866231843464,
+        "balancedAccuracy": 0.7965880568112735,
+        "precision": 0.5786993402450519,
+        "recall": 0.6536550745209369,
+        "specificity": 0.9395210391016101,
+        "f1": 0.6138976837193801,
+        "rocAuc": 0.8843486139399908,
+        "prAuc": 0.6400499767819846,
+        "threshold": 0.6895840764045715,
+        "weightedLoss": 0.5382413879140728
+      },
+      "training": {
+        "bestEpoch": 3,
+        "bestValidationPrAuc": 0.6470681421967068,
+        "bestValidationAccuracy": 0.8933380303741976,
+        "finalEpoch": 8,
+        "finalValidationAccuracy": 0.9069594488805386,
+        "trainingSeconds": 53392.72019410133
+      },
+      "truncation": {
+        "testPercentage": 82.25,
+        "selectedMaxLength": null
+      },
+      "figures": [
+        {
+          "name": "class_distribution.png",
+          "label": "Class distribution",
+          "url": "/dashboard_data/anxiety/figures/deberta-finetuned/class_distribution.png"
+        },
+        {
+          "name": "test_confusion_matrix.png",
+          "label": "Test confusion matrix",
+          "url": "/dashboard_data/anxiety/figures/deberta-finetuned/test_confusion_matrix.png"
+        },
+        {
+          "name": "test_roc_pr_curves.png",
+          "label": "Test ROC and precision-recall curves",
+          "url": "/dashboard_data/anxiety/figures/deberta-finetuned/test_roc_pr_curves.png"
+        },
+        {
+          "name": "token_length_distribution.png",
+          "label": "Token-length distribution",
+          "url": "/dashboard_data/anxiety/figures/deberta-finetuned/token_length_distribution.png"
+        },
+        {
+          "name": "training_validation_accuracy_loss.png",
+          "label": "Training and validation accuracy/loss",
+          "url": "/dashboard_data/anxiety/figures/deberta-finetuned/training_validation_accuracy_loss.png"
+        },
+        {
+          "name": "validation_metrics_by_epoch.png",
+          "label": "Validation metrics by epoch",
+          "url": "/dashboard_data/anxiety/figures/deberta-finetuned/validation_metrics_by_epoch.png"
+        },
+        {
+          "name": "validation_threshold_selection.png",
+          "label": "Validation threshold selection",
+          "url": "/dashboard_data/anxiety/figures/deberta-finetuned/validation_threshold_selection.png"
+        }
+      ],
+      "metricsSource": "metrics.json"
+    },
+    {
+      "id": "clinical-longformer-baseline",
+      "model": "Clinical Longformer",
+      "stage": "Baseline",
+      "relativeDirectory": "clinical_longformer_baseline/anxiety",
+      "status": "missing",
+      "message": "Clinical Longformer baseline was not available for this experiment.",
+      "metrics": null,
+      "training": null,
+      "truncation": null,
+      "figures": []
+    },
+    {
+      "id": "clinical-longformer-finetuned",
+      "model": "Clinical Longformer",
+      "stage": "Fine-tuned",
+      "relativeDirectory": "clinical_longformer_finetuned/anxiety",
+      "status": "complete",
+      "message": "Metrics loaded successfully.",
+      "metrics": {
+        "accuracy": 0.9163298787563523,
+        "balancedAccuracy": 0.8272396859754079,
+        "precision": 0.6105871615454822,
+        "recall": 0.7122072391767211,
+        "specificity": 0.9422721327740946,
+        "f1": 0.6574938574938575,
+        "rocAuc": 0.9250426200421442,
+        "prAuc": 0.7134182394389392,
+        "threshold": 0.26223984360694885,
+        "weightedLoss": 0.6064653548060944
+      },
+      "training": {
+        "bestEpoch": 3,
+        "bestValidationPrAuc": 0.7243028281148475,
+        "bestValidationAccuracy": 0.9248864881791138,
+        "finalEpoch": 8,
+        "finalValidationAccuracy": 0.919798027242837,
+        "trainingSeconds": 454060.99570441246
+      },
+      "truncation": {
+        "testPercentage": 9.04,
+        "selectedMaxLength": 2048.0
+      },
+      "figures": [
+        {
+          "name": "class_distribution.png",
+          "label": "Class distribution",
+          "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/class_distribution.png"
+        },
+        {
+          "name": "test_confusion_matrix.png",
+          "label": "Test confusion matrix",
+          "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/test_confusion_matrix.png"
+        },
+        {
+          "name": "test_roc_pr_curves.png",
+          "label": "Test ROC and precision-recall curves",
+          "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/test_roc_pr_curves.png"
+        },
+        {
+          "name": "token_length_distribution.png",
+          "label": "Token-length distribution",
+          "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/token_length_distribution.png"
+        },
+        {
+          "name": "training_validation_accuracy_loss.png",
+          "label": "Training and validation accuracy/loss",
+          "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/training_validation_accuracy_loss.png"
+        },
+        {
+          "name": "validation_metrics_by_epoch.png",
+          "label": "Validation metrics by epoch",
+          "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/validation_metrics_by_epoch.png"
+        },
+        {
+          "name": "validation_threshold_selection.png",
+          "label": "Validation threshold selection",
+          "url": "/dashboard_data/anxiety/figures/clinical-longformer-finetuned/validation_threshold_selection.png"
+        }
+      ],
+      "metricsSource": "metrics.json"
+    }
+  ],
+  "comparisons": [
+    {
+      "model": "ClinicalBERT",
+      "status": "comparable",
+      "baselineRunId": "clinicalbert-baseline",
+      "fineTunedRunId": "clinicalbert-finetuned",
+      "deltas": {
+        "accuracy": 0.1214037053339202,
+        "balancedAccuracy": 0.13315673955213203,
+        "precision": 0.33022731647843945,
+        "recall": 0.1483321504613201,
+        "specificity": 0.1179813286429442,
+        "f1": 0.26855938400653845,
+        "rocAuc": 0.1734149827104794,
+        "prAuc": 0.34663354855123696,
+        "threshold": 0.32974809408187866,
+        "weightedLoss": null
+      }
+    },
+    {
+      "model": "RoBERTa",
+      "status": "comparable",
+      "baselineRunId": "roberta-baseline",
+      "fineTunedRunId": "roberta-finetuned",
+      "deltas": {
+        "accuracy": 0.09755511984314347,
+        "balancedAccuracy": 0.10407400422453827,
+        "precision": 0.27793075111612614,
+        "recall": 0.11249112845990061,
+        "specificity": 0.09565687998917605,
+        "f1": 0.22069636194219627,
+        "rocAuc": 0.11649756926282995,
+        "prAuc": 0.28163474960820745,
+        "threshold": -0.051388829946517944,
+        "weightedLoss": -0.03272829965035129
+      }
+    },
+    {
+      "model": "DeBERTa",
+      "status": "comparable",
+      "baselineRunId": "deberta-baseline",
+      "fineTunedRunId": "deberta-finetuned",
+      "deltas": {
+        "accuracy": 0.15545596414709295,
+        "balancedAccuracy": 0.1741849458082656,
+        "precision": 0.36306908814421157,
+        "recall": 0.19836763662171752,
+        "specificity": 0.15000225499481357,
+        "f1": 0.32124257423032904,
+        "rocAuc": 0.2005310952901913,
+        "prAuc": 0.4109727597727464,
+        "threshold": 0.27366986870765686,
+        "weightedLoss": -0.1433636315148593
+      }
+    },
+    {
+      "model": "Clinical Longformer",
+      "status": "unavailable",
+      "baselineRunId": "clinical-longformer-baseline",
+      "fineTunedRunId": "clinical-longformer-finetuned",
+      "deltas": {}
+    }
+  ]
+}
