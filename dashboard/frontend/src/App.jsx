@@ -8,6 +8,7 @@ import {
 
 import LivePredictionPage from "./pages/LivePredictionPage";
 import DepressionModelsPage from "./pages/DepressionModelsPage";
+import AnxietyModelsPage from "./pages/AnxietyModelsPage";
 import "./App.css";
 
 const navigationItems = [
@@ -145,7 +146,7 @@ function App() {
             <Route
               path="/anxiety"
               element={
-                <PlaceholderPage title="Anxiety Models" />
+                <AnxietyModelsPage />
               }
             />
 
