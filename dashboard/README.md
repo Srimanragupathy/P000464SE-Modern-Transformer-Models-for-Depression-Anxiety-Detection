@@ -1,61 +1,79 @@
-# Mental Health Analytics Dashboard
+# Clinical NLP Mental Health Dashboard
 
-This dashboard presents the project results and provides live depression and anxiety risk predictions from the fine-tuned Clinical Longformer models.
+This dashboard presents the results of transformer-based depression and anxiety detection from de-identified clinical notes. It combines a React frontend with a Flask inference API and supports ClinicalBERT, RoBERTa, DeBERTa, and Clinical Longformer. The dashboard is intended for research demonstration only and must not be used as a clinical diagnosis or decision-making system.
 
-## Technology
+## Dashboard features
 
-- Frontend: React and Vite
-- Backend: Flask
-- Models: Fine-tuned Clinical Longformer for depression and anxiety
-- Database: No
+- Project and model overview
+- Dataset exploration figures
+- Depression model results
+- Anxiety model results
+- Live depression and anxiety risk prediction
+- Comparative and subgroup analysis
+- Interpretability results
+- Methodology summary
+- Selection among available fine-tuned models
+- Clear warnings when part of a note exceeds a model's token limit
 
-## 1. Required software
+## Technology stack
 
-Install the following before starting:
+- Frontend: React, Vite, JavaScript, and CSS
+- Backend: Python and Flask
+- Model inference: PyTorch and Hugging Face Transformers
+- Data storage: Local CSV, JSON, image, figure, and model-output files
+- Database: Not required
 
-- Python 3.11 or 3.12
-- Node.js 18 or newer
-- npm
-
-Check the installations:
-
-```bash
-python3 --version
-node --version
-npm --version
-```
-
-## 2. Expected project structure
+## Project structure
 
 ```text
-project-root/
-├── dashboard/
-│   ├── README.md
-│   ├── backend/
-│   └── frontend/
-└── model_outputs/
-    └── clinical_longformer_finetuned/
-        ├── depression/
-        │   └── deployment_bundle/
-        │       ├── inference_config.json
-        │       └── model/
-        └── anxiety/
-            └── deployment_bundle/
-                ├── inference_config.json
-                └── model/
+dashboard/
+├── backend/
+│   ├── .venv/
+│   ├── app.py
+│   ├── model_registry.py
+│   ├── predictor.py
+│   ├── preprocessing.py
+│   └── requirements.txt
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── api.js
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+└── README.md
 ```
 
-Each `model` directory must contain the saved model and tokenizer files, including `config.json` and `model.safetensors`.
+The trained model directories are stored outside the dashboard folder under the main project's `model_outputs` directory.
 
-## 3. Set up the Flask backend
+## Prerequisites
 
-Open a terminal in the `dashboard` folder:
+Install the following software before starting:
+
+- Python 3.10 or 3.11
+- Node.js 18 or later
+- npm
+- Git
+
+The trained model checkpoints must also be available locally.
+
+## 1. Clone and open the project
 
 ```bash
-cd dashboard
+git clone <your-repository-url>
+cd P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/dashboard
 ```
 
-Create a Python environment inside the backend folder:
+Replace `<your-repository-url>` with the GitHub repository URL.
+
+## 2. Set up the Flask backend
+
+From the `dashboard` directory, create a virtual environment:
 
 ```bash
 python3 -m venv backend/.venv
@@ -73,117 +91,184 @@ Activate it on Windows PowerShell:
 backend\.venv\Scripts\Activate.ps1
 ```
 
-Install the backend packages:
+Install the backend dependencies:
 
 ```bash
 python -m pip install --upgrade pip
-python -m pip install -r backend/requirements.txt
+pip install -r backend/requirements.txt
 ```
 
-If `requirements.txt` has not been created, install the packages directly:
+If a requirements file is not present, install the main packages directly:
 
 ```bash
-python -m pip install flask flask-cors torch transformers safetensors
+pip install flask flask-cors python-dotenv torch transformers safetensors
 ```
 
-## 4. Check the model paths
+## 3. Configure the backend
 
-The default `backend/config.py` expects `dashboard` and `model_outputs` to be inside the same project root:
+The backend searches for trained checkpoints inside `model_outputs`. The expected structure is:
 
 ```text
-project-root/dashboard
-project-root/model_outputs
+model_outputs/
+├── clinicalbert_finetuned/
+│   ├── depression/
+│   │   └── best_model/
+│   └── anxiety/
+│       └── best_model/
+├── roberta_finetuned/
+│   ├── depression/
+│   │   └── best_model/
+│   └── anxiety/
+│       └── best_model/
+├── deberta_finetuned/
+│   ├── depression/
+│   │   └── best_model/
+│   └── anxiety/
+│       └── best_model/
+└── clinical_longformer_finetuned/
+    ├── depression/
+    │   └── best_model/
+    └── anxiety/
+        └── best_model/
 ```
 
-The required model folders are:
+Each usable `best_model` directory should contain files such as:
 
 ```text
-model_outputs/clinical_longformer_finetuned/depression/deployment_bundle
-model_outputs/clinical_longformer_finetuned/anxiety/deployment_bundle
+config.json
+model.safetensors
+tokenizer_config.json
+tokenizer.json
+special_tokens_map.json
 ```
 
-If your folders are elsewhere, update `MODEL_OUTPUT_ROOT` in `backend/config.py`.
+The backend can also read the model from `deployment_bundle/model` when that structure is available.
 
-## 5. Start the Flask backend
+If the dashboard cannot automatically locate `model_outputs`, create `backend/.env` and provide its absolute path:
 
-Run this command from the `dashboard` folder:
+```env
+MODEL_OUTPUTS_DIR=/absolute/path/to/P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/model_outputs
+CORS_ORIGINS=http://localhost:5173
+INFERENCE_DEVICE=auto
+MAX_CACHED_MODELS=2
+MAX_NOTE_CHARACTERS=50000
+FLASK_DEBUG=true
+```
+
+On Windows, use an absolute path such as:
+
+```env
+MODEL_OUTPUTS_DIR=C:\Users\YourName\Documents\GitHub\P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection\model_outputs
+```
+
+## 4. Start the Flask backend
+
+Run this command from the `dashboard` directory, not from inside `backend`:
 
 ```bash
 python -m flask --app backend.app run --debug
 ```
 
-The backend will run at:
+The backend should start at:
 
 ```text
 http://127.0.0.1:5000
 ```
 
-Do not close this terminal while using the dashboard.
-
-## 6. Test the backend
-
-Open another terminal and run the health check:
+Check the backend health endpoint:
 
 ```bash
-curl -s http://127.0.0.1:5000/api/health | python -m json.tool
+curl http://127.0.0.1:5000/api/health
 ```
 
-Check the model files:
+Check the available model catalogue:
 
 ```bash
-curl -s http://127.0.0.1:5000/api/prediction/status | python -m json.tool
+curl http://127.0.0.1:5000/api/models
 ```
 
-For both tasks, these values should be `true`:
+Keep this terminal open while using the dashboard.
 
-```json
-"bundle_exists": true,
-"configuration_exists": true,
-"model_exists": true
-```
+## 5. Set up the React frontend
 
-## 7. Set up the React frontend
-
-Open a separate terminal:
+Open a second terminal and move into the frontend folder:
 
 ```bash
 cd dashboard/frontend
+```
+
+If the current terminal is already inside `dashboard`, use:
+
+```bash
+cd frontend
+```
+
+Install the frontend dependencies:
+
+```bash
 npm install
 ```
 
-Start the frontend:
+Start the Vite development server:
 
 ```bash
 npm run dev
 ```
 
-Open the URL displayed by Vite, normally:
+Open the displayed address, normally:
 
 ```text
 http://localhost:5173
 ```
 
-The Live Prediction page is normally available at:
+## 6. Test live prediction
+
+1. Open the **Live Prediction** page.
+2. Select a fine-tuned model.
+3. Paste a de-identified clinical note or use the synthetic example.
+4. Select **Predict**.
+5. Review the depression and anxiety probability estimates.
+6. Check whether the full prepared note was analysed or whether tokens were omitted.
+
+ClinicalBERT, RoBERTa, and DeBERTa use a maximum context length of 512 tokens. Clinical Longformer uses 2,048 tokens. When a prepared note is longer than the selected limit, text at the end is omitted and cannot influence the prediction.
+
+The first request can take longer because the backend must load the depression and anxiety checkpoints into memory.
+
+## API endpoints
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/health` | Check backend status, device, and ready models |
+| `GET` | `/api/models` | Return the public model catalogue |
+| `POST` | `/api/predict` | Predict depression and anxiety with one selected model |
+| `POST` | `/api/predict/both` | Alternative endpoint for the same two-task prediction |
+
+Example request:
+
+```bash
+curl -X POST http://127.0.0.1:5000/api/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model_key": "clinical_longformer",
+    "note": "PAST MEDICAL HISTORY: Hypertension. CHIEF COMPLAINT: Poor sleep and reduced appetite."
+  }'
+```
+
+Valid model keys are:
 
 ```text
-http://localhost:5173/prediction
+clinicalbert
+roberta
+deberta
+clinical_longformer
 ```
 
-Keep both the Flask and React terminals running.
+## Stopping the dashboard
 
-## 8. Normal startup after the first setup
+Press `Ctrl + C` in the frontend terminal and the backend terminal.
 
-Backend terminal:
-
-```bash
-cd dashboard
-source backend/.venv/bin/activate
-python -m flask --app backend.app run --debug
-```
-
-Frontend terminal:
+To leave the Python virtual environment:
 
 ```bash
-cd dashboard/frontend
-npm run dev
+deactivate
 ```
