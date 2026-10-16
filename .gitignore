@@ -1,3 +1,25 @@
 /dataset
 /model_cache
 /model_outputs
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# React
+node_modules/
+dist/
+
+# macOS
+.DS_Store
+.DS_Store

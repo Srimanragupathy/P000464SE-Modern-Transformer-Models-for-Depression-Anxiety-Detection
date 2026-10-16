@@ -1,0 +1,539 @@
+.anxiety-page {
+  --anxiety-ink: #18243a;
+  --anxiety-muted: #657086;
+  --anxiety-border: #dfe4ed;
+  --anxiety-surface: #ffffff;
+  --anxiety-soft: #f5f7fb;
+  --anxiety-violet: #6d5bd0;
+  --anxiety-violet-dark: #4c3ca2;
+  --anxiety-blue: #4178be;
+  --anxiety-teal: #188879;
+  --anxiety-orange: #c4772c;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px;
+  color: var(--anxiety-ink);
+}
+
+.anxiety-page * {
+  box-sizing: border-box;
+}
+
+.anxiety-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.8fr);
+  gap: 24px;
+  padding: 36px;
+  border: 1px solid #d9d4f5;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(109, 91, 208, 0.18), transparent 26%),
+    linear-gradient(135deg, #faf9ff 0%, #f0f7ff 100%);
+  box-shadow: 0 18px 44px rgba(31, 39, 78, 0.08);
+}
+
+.anxiety-eyebrow,
+.anxiety-kicker {
+  margin: 0 0 8px;
+  color: var(--anxiety-violet-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.anxiety-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.anxiety-hero-copy {
+  max-width: 850px;
+  margin: 18px 0 0;
+  color: var(--anxiety-muted);
+  font-size: 1.02rem;
+  line-height: 1.72;
+}
+
+.anxiety-hero-note {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  padding: 24px;
+  color: #fff;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #5141ac, #6d5bd0);
+}
+
+.anxiety-hero-note strong {
+  font-size: 1.02rem;
+}
+
+.anxiety-hero-note span {
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.55;
+}
+
+.anxiety-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0 42px;
+}
+
+.anxiety-metric-card {
+  position: relative;
+  min-height: 150px;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid var(--anxiety-border);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 9px 26px rgba(25, 36, 65, 0.06);
+}
+
+.anxiety-metric-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  content: "";
+  background: var(--card-accent, var(--anxiety-teal));
+}
+
+.anxiety-metric-card--violet { --card-accent: var(--anxiety-violet); }
+.anxiety-metric-card--blue { --card-accent: var(--anxiety-blue); }
+.anxiety-metric-card--teal { --card-accent: var(--anxiety-teal); }
+.anxiety-metric-card--orange { --card-accent: var(--anxiety-orange); }
+.anxiety-metric-card--slate { --card-accent: #697386; }
+
+.anxiety-metric-card p {
+  margin: 0;
+  color: var(--anxiety-muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.anxiety-metric-card strong {
+  display: block;
+  margin: 13px 0 5px;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.anxiety-metric-card span {
+  color: var(--anxiety-muted);
+  font-size: 0.86rem;
+}
+
+.anxiety-section {
+  margin: 0 0 44px;
+}
+
+.anxiety-section-heading,
+.anxiety-panel-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.anxiety-section-heading h2,
+.anxiety-panel-heading h3 {
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.anxiety-section-heading h2 {
+  font-size: 1.65rem;
+}
+
+.anxiety-panel-heading h3 {
+  font-size: 1.18rem;
+}
+
+.anxiety-section-heading > p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--anxiety-muted);
+  line-height: 1.55;
+}
+
+.anxiety-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.anxiety-panel {
+  padding: 22px;
+  border: 1px solid var(--anxiety-border);
+  border-radius: 18px;
+  background: var(--anxiety-surface);
+  box-shadow: 0 8px 24px rgba(25, 36, 65, 0.05);
+}
+
+.anxiety-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--anxiety-muted);
+  font-size: 0.78rem;
+}
+
+.anxiety-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.anxiety-chart-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.anxiety-legend-baseline { background: #91a0b7; }
+.anxiety-legend-finetuned { background: var(--anxiety-violet); }
+
+.anxiety-comparison-chart {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(82px, 1fr));
+  gap: 14px;
+  min-height: 310px;
+  padding: 28px 10px 0;
+  border-bottom: 1px solid #cfd6e1;
+  background: repeating-linear-gradient(
+    to top,
+    transparent 0,
+    transparent 24.75%,
+    #edf0f5 25%,
+    transparent 25.5%
+  );
+}
+
+.anxiety-chart-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.anxiety-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  height: 245px;
+}
+
+.anxiety-bar-column {
+  display: flex;
+  flex: 0 1 42px;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 28px;
+}
+
+.anxiety-bar-value {
+  min-height: 19px;
+  margin-bottom: 5px;
+  color: #3f4960;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.anxiety-bar {
+  width: 100%;
+  min-height: 0;
+  border-radius: 6px 6px 0 0;
+  transition: height 240ms ease;
+}
+
+.anxiety-bar--baseline { background: linear-gradient(#aab6c8, #7c8da8); }
+.anxiety-bar--finetuned { background: linear-gradient(#8876e5, #5a49b5); }
+
+.anxiety-chart-label {
+  min-height: 49px;
+  padding: 9px 3px 0;
+  color: #4f596d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.anxiety-chart-scale {
+  margin: 10px 0 0;
+  color: #8a93a5;
+  font-size: 0.73rem;
+  text-align: right;
+}
+
+.anxiety-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--anxiety-border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.anxiety-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.anxiety-table th,
+.anxiety-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid #e8ebf1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.anxiety-table th {
+  color: #4d5770;
+  background: #f3f5f9;
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.anxiety-table td {
+  color: #434d62;
+  font-size: 0.84rem;
+}
+
+.anxiety-table tbody tr:hover {
+  background: #fafaff;
+}
+
+.anxiety-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.anxiety-status {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.anxiety-status--complete {
+  color: #0c6a5e;
+  background: #dff6f0;
+}
+
+.anxiety-status--missing {
+  color: #7a5261;
+  background: #f5e7ec;
+}
+
+.anxiety-status--incomplete {
+  color: #8b5b17;
+  background: #fff0d7;
+}
+
+.anxiety-table-note {
+  margin: 10px 3px 0;
+  color: var(--anxiety-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.anxiety-positive {
+  color: #0c7a69 !important;
+  font-weight: 800;
+}
+
+.anxiety-negative {
+  color: #bd4e54 !important;
+  font-weight: 800;
+}
+
+.anxiety-findings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.anxiety-findings-grid article {
+  padding: 22px;
+  border: 1px solid var(--anxiety-border);
+  border-radius: 17px;
+  background: linear-gradient(155deg, #fff, #f7f6ff);
+}
+
+.anxiety-findings-grid article > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: #fff;
+  border-radius: 10px;
+  background: var(--anxiety-violet);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.anxiety-findings-grid h3 {
+  margin: 16px 0 8px;
+  font-size: 1rem;
+}
+
+.anxiety-findings-grid p {
+  margin: 0;
+  color: var(--anxiety-muted);
+  font-size: 0.86rem;
+  line-height: 1.62;
+}
+
+.anxiety-gallery-heading label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--anxiety-muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.anxiety-gallery-heading select {
+  min-width: 290px;
+  padding: 10px 36px 10px 12px;
+  color: var(--anxiety-ink);
+  border: 1px solid #cfd5e1;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+}
+
+.anxiety-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.anxiety-figure-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--anxiety-border);
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 7px 22px rgba(25, 36, 65, 0.05);
+}
+
+.anxiety-figure-card a {
+  display: block;
+  padding: 12px;
+  background: #f6f7fa;
+}
+
+.anxiety-figure-card img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.anxiety-figure-card figcaption {
+  padding: 17px 18px 19px;
+}
+
+.anxiety-figure-card figcaption strong,
+.anxiety-figure-card figcaption span {
+  display: block;
+}
+
+.anxiety-figure-card figcaption span {
+  margin-top: 4px;
+  color: var(--anxiety-violet-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.anxiety-figure-card figcaption p {
+  margin: 10px 0 0;
+  color: var(--anxiety-muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.anxiety-disclaimer,
+.anxiety-error,
+.anxiety-empty,
+.anxiety-loading {
+  padding: 20px;
+  border: 1px solid #ddd8f3;
+  border-radius: 14px;
+  background: #f8f7ff;
+  color: #514c6b;
+  line-height: 1.55;
+}
+
+.anxiety-error code {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  background: #28253a;
+  color: #fff;
+}
+
+@media (max-width: 1180px) {
+  .anxiety-metric-grid,
+  .anxiety-findings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .anxiety-chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .anxiety-page {
+    padding: 18px;
+  }
+
+  .anxiety-hero {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .anxiety-metric-grid,
+  .anxiety-findings-grid,
+  .anxiety-figure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .anxiety-section-heading,
+  .anxiety-panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .anxiety-comparison-chart {
+    grid-template-columns: repeat(4, minmax(68px, 1fr));
+    overflow-x: auto;
+  }
+
+  .anxiety-gallery-heading select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .anxiety-figure-card img {
+    height: 260px;
+  }
+}
