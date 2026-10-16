@@ -64,13 +64,6 @@ The trained model checkpoints must also be available locally.
 
 ## 1. Clone and open the project
 
-```bash
-git clone <your-repository-url>
-cd P000464SE-Modern-Transformer-Models-for-Depression-Anxiety-Detection/dashboard
-```
-
-Replace `<your-repository-url>` with the GitHub repository URL.
-
 ## 2. Set up the Flask backend
 
 From the `dashboard` directory, create a virtual environment:
@@ -106,8 +99,10 @@ pip install flask flask-cors python-dotenv torch transformers safetensors
 
 ## 3. Configure the backend
 
-The backend searches for trained checkpoints inside `model_outputs`. The expected structure is:
+The backend searches for trained checkpoints inside `model_outputs`. 
+You can directly download the model_outputs folder from here: https://rmiteduau-my.sharepoint.com/:f:/g/personal/s4142480_student_rmit_edu_au/IgAZGNkgU3qgQKiS5clZApxYAYHT3Pj8kw-xRBhb5JHLZsw?e=x8kwmW
 
+The expected structure is:
 ```text
 model_outputs/
 ├── clinicalbert_finetuned/
