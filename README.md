@@ -287,6 +287,8 @@ dashboard/README.md
 
 The dashboard does not require a database. It reads prepared figures, CSV/JSON outputs, and local fine-tuned model checkpoints. Live prediction requires both the React frontend and Flask backend to be running.
 
+<img width="1512" height="982" alt="Screenshot 2026-10-16 at 16 54 34" src="https://github.com/user-attachments/assets/0960ba5a-e363-4490-ab1c-1af341eb53a2" />
+
 ## Team
 
 - Purna Peramune
