@@ -1,0 +1,75 @@
+===============================================================================
+P000464SE - Modern Transformer Models for Depression & Anxiety Detection
+Release Notes - Final Release (v1.0)
+Date: 2026-10-23
+Team: Kartik Sharma, Purna Peramune, Elio Cy, Sriman Ragupathy
+Course: COSC2410 / COSC2648 - Capstone Project, Semester 2, 2026
+===============================================================================
+
+1. OVERVIEW
+-------------------------------------------------------------------------------
+This release delivers a research benchmark of transformer-based NLP models for
+detecting indicators of depression and anxiety from free-text discharge
+summaries in the MIMIC-IV clinical database, together with explainability views
+and a clinician-facing dashboard (demonstration). It is a research benchmark,
+not a deployable clinical tool.
+
+2. DELIVERED IN THIS RELEASE
+-------------------------------------------------------------------------------
+- Benchmarked models: ClinicalBERT, RoBERTa, DeBERTa, Clinical Longformer, and
+  a locally-run open-weight model on RMIT RACE (no patient text sent to any
+  external/commercial API).
+- Dataset pipeline on MIMIC-IV: cohort aged 60+, labels derived from ICD-9/10
+  diagnostic codes, patient-level train/validation/test split.
+- Explainability: SHAP and attention-based views.
+- Dashboard (local demo): data overview, model/performance comparison, and a
+  live prediction demo.
+- Documentation: research report, product backlog, risk register, issue
+  register, sprint planning/review/retro notes.
+
+3. KNOWN ISSUES / LIMITATIONS REMAINING IN THIS RELEASE
+-------------------------------------------------------------------------------
+The following are known and accepted at the time of final release. Each is
+tracked as a corresponding Bug issue in the Jira "Known Issues" sprint, so Jira
+and this file match exactly.
+
+  KI-1  [RMIT-96]   Moderate predictive performance. Benchmarked models reach
+                    only moderate scores; the system is a research benchmark and
+                    is NOT suitable for clinical deployment or autonomous use.
+
+  KI-2  [RMIT-97]   Class imbalance. Depression/anxiety positives are minority
+                    classes; recall on the positive class is lower than on the
+                    majority class. F1 and recall are reported (not headline
+                    accuracy) to keep this visible.
+
+  KI-3  [RMIT-98]   512-token truncation. BERT-family models truncate long
+                    discharge summaries at 512 tokens, dropping later content.
+                    Clinical Longformer partially mitigates but does not fully
+                    resolve this.
+
+  KI-4  [RMIT-99]   Limited generalisability. Results are evaluated only on the
+                    MIMIC-IV elderly (60+) US ICU cohort; performance on other
+                    populations, hospitals or note styles is not established.
+
+  KI-5  [RMIT-100]  Dashboard is a prototype/demo. The dashboard and live
+                    prediction run locally and are illustrative only; they are
+                    not production-hardened (no auth, scaling, or monitoring).
+
+  KI-6  [RMIT-101]  No external clinical validation. Outputs are decision-support
+                    only, not diagnostic, and have not been validated by
+                    clinicians on unseen real-world data.
+
+  KI-7  [RMIT-102]  Compute/credit constraints. RACE GPU credit and capacity
+                    limits restricted some fine-tuning and hyperparameter
+                    exploration; not all configurations were exhaustively tuned.
+
+4. NOT IN SCOPE / FUTURE WORK
+-------------------------------------------------------------------------------
+- External clinical validation on unseen, real-world data.
+- Production hardening and deployment of the dashboard.
+- Broader cohorts (e.g. non-elderly, non-ICU, non-US) and additional models.
+- Bias/fairness auditing across demographic subgroups.
+
+===============================================================================
+End of release notes.
+===============================================================================
